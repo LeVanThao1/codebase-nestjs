@@ -1,0 +1,30 @@
+
+
+type Mutation {
+    login(info: LoginInput!): AuthenticationInfo
+    logout: Boolean
+}
+
+# type GRole {
+#     _id: ID
+#     code: String
+#     description: String
+#     type: String,
+#     permissions: [GPermission]
+# }
+
+# type GPermission {
+#     _id: ID
+#     code: String,
+#     description: String
+# }
+
+type AuthenticationInfo {
+  token: String!
+  userId: String!
+}
+
+input LoginInput {
+  username: String!
+  password: String!
+}

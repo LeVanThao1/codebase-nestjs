@@ -1,0 +1,25 @@
+scalar JSON
+
+type Query {
+    histories: [GHistory]
+    historiesOfUser(userId: ID!): [GHistory]
+    historiesOfMe: [GHistory]
+}
+
+enum GEnumHistory {
+    CREATE 
+    UPDATE 
+    DELETE 
+    RECOVERY
+}
+
+type GHistory {
+   _id: String
+   document: String
+   documentID: String
+   action: GEnumHistory
+   description: String
+   createdAt: Float 
+   createdBy: String
+}
+

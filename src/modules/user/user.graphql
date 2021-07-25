@@ -1,0 +1,34 @@
+type Query {
+    me: GUser
+    users: [GUser]
+}
+
+type Mutation {
+    createUser(input: GUserInput!): GUser
+    updateUser(input: GUserInput!, id: ID!): GUser
+    removeUsers(ids: [ID!]): Boolean
+}
+
+type GUser {
+    _id: String
+    username: String
+    firstName: String
+    lastName: String
+    fullName: String
+    picture: String
+    email: String
+    isActive: Boolean
+    createdAt: Float
+    updatedAt: Float
+    deletedAt: Float
+}
+
+input GUserInput {
+    username: String
+    password: String
+    firstName: String
+    lastName: String
+    displayName: String
+    email: String
+    picture: String
+}
